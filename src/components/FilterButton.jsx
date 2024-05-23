@@ -1,5 +1,4 @@
 export default function FilterButton({ genre, setGenre }) {
-
     const handleChange = (genderValue) => {
         let gender = genderValue.target.value;
 
@@ -50,5 +49,5 @@ export default function FilterButton({ genre, setGenre }) {
                 </option>
             </select>
         </>
-    )
+    );
 }

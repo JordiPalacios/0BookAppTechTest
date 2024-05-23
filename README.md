@@ -16,9 +16,9 @@ Funcionalidad
 
 []Filtrado de Libros por Género:
 [x]Los usuarios deben poder filtrar la lista de libros disponibles por género
-[] Contador con el número de libros disponibles
+[x] Contador con el número de libros disponibles
 [] Número de libros en la lista de lectura
-[] Número de libros disponibles en el género seleccionado.
+[x] Número de libros disponibles en el género seleccionado.
 
 []Sincronización de Estado:
 []Debe haber una sincronización del estado global que refleje el número de libros en la lista de lectura y el número de libros todavía disponibles. Si un libro se mueve de la lista de disponibles a la lista de lectura, el recuento de ambos debe actualizarse en consecuencia.
