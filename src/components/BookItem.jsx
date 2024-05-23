@@ -6,7 +6,7 @@ export default function BookItem({ entry }) {
 
     const onFavChange = () => {
         setFavBook(!favBook);
-    }
+    };
 
     return (
         <>
@@ -19,9 +19,8 @@ export default function BookItem({ entry }) {
                 alt={`img${entry.title}`}
             />
             <article>{entry.synopsis}</article>
-            <p>{favBook ? "Añadido a favoritos" : "No añadido a favoritos"}</p>
             <Button onFavChange={onFavChange}>
-                Añadir libro a favoritos
+                {favBook ? "Quitar de favoritos" : "Añadir a favoritos"}
             </Button>
         </>
     );
