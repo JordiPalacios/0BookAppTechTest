@@ -1,11 +1,15 @@
-import { useState } from "react";
 import Button from "./Button";
+import { BooksContext } from "../context/BooksContext";
+import { useContext } from "react";
 
 export default function BookItem({ entry }) {
-    const [favBook, setFavBook] = useState(false);
+    const { favBook, addFavBook, removeFavBook } = useContext(BooksContext);
+    const isFavBook = favBook.some((book) => book.ISBN === entry.ISBN);
 
     const onFavChange = () => {
-        setFavBook(!favBook);
+        {
+            isFavBook ? removeFavBook(entry.ISBN) : addFavBook(entry);
+        }
     };
 
     return (
@@ -20,7 +24,7 @@ export default function BookItem({ entry }) {
             />
             <article>{entry.synopsis}</article>
             <Button onFavChange={onFavChange}>
-                {favBook ? "Quitar de favoritos" : "Añadir a favoritos"}
+                {isFavBook ? "Quitar de lista lectura" : "Añadir a lista lectura"}
             </Button>
         </>
     );
