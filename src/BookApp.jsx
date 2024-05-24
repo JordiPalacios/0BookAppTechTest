@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { FilterButton, SectionContainer, BooksList } from "./components/index";
+import {
+    FilterButton,
+    SectionContainer,
+    BooksList,
+    ListaLectura,
+} from "./components/index";
 import books from "./mock/books.json";
 
 export default function BookApp() {
@@ -49,10 +54,14 @@ export default function BookApp() {
                     <FilterButton genre={genre} setGenre={setGenre} />
                 </div>
             </div>
-
-            <SectionContainer sectionClassName="text-white/90">
-                <BooksList booksList={books.library} genre={genre} />
-            </SectionContainer>
+            <div className="flex flex-row items-start justify-between">
+                <SectionContainer sectionClassName="text-white/90">
+                    <BooksList booksList={books.library} genre={genre} />
+                </SectionContainer>
+                <SectionContainer sectionClassName={"text-emerald-300/90"}>
+                    <ListaLectura />
+                </SectionContainer>
+            </div>
         </>
     );
 }
