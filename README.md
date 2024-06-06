@@ -9,10 +9,10 @@ Funcionalidad
 [x] Visualización de Libros Disponibles:
 [x]La aplicación debe mostrar una lista de libros disponibles que el usuario pueda revisar.
 
-[]Creación de Lista de Lectura:
-[]El usuario debe ser capaz de crear una lista de lectura a partir de los libros disponibles.
-[]En la UI debe quedar claro qué libros están en la lista de lectura y cuáles no.
-[]También debe ser posible mover un libro de la lista de lectura a la lista de disponibles.
+[x]Creación de Lista de Lectura:
+[x]El usuario debe ser capaz de crear una lista de lectura a partir de los libros disponibles.
+[x]En la UI debe quedar claro qué libros están en la lista de lectura y cuáles no.
+[x]También debe ser posible mover un libro de la lista de lectura a la lista de disponibles.
 
 [x]Filtrado de Libros por Género:
 [x]Los usuarios deben poder filtrar la lista de libros disponibles por género
