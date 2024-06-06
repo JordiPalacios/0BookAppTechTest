@@ -1,13 +1,12 @@
+import React from "react";
 import { useContext } from "react";
 import { BooksContext } from "../context/BooksContext";
-import Button from "./Button";
 export default function ListaLectura({ entry }) {
     const { favBook, removeFavBook } = useContext(BooksContext);
-    // const isFavBook = favBook.some((book) => book.ISBN === entry.ISBN)
 
-    // const handleClick = () => {
-    //     { isFavBook ? removeFavBook(entry.target.ISBN) : null}
-    // }
+    const handleClick = (ISBN) => () => {
+        removeFavBook(ISBN);
+    };
 
     return (
         <div className="flex flex-col items-center">
@@ -15,20 +14,23 @@ export default function ListaLectura({ entry }) {
                 Lista de Lectura
             </h3>
             <ul>
-                {favBook.map((entry) => {
+                {favBook.map((entry, index) => {
                     return (
-                        <>
+                        <React.Fragment key={index}>
                             <li className="m-2">
                                 <img
                                     src={entry.cover}
                                     alt={`img${entry.title}`}
                                     className="w-28 h-auto"
                                 />
-                                <button className="w-full text-xs text-pretty text-center p-1">
-                                    {favBook ? "Quitar de lista lectura" : null}
+                                <button
+                                    onClick={handleClick(entry.ISBN)}
+                                    className="w-full text-xs text-pretty text-center bg-emerald-500/50 hover:bg-emerald-800 text-white font-bold mt-2 py-2 px-4 rounded"
+                                >
+                                    Quitar de lista lectura
                                 </button>
                             </li>
-                        </>
+                        </React.Fragment>
                     );
                 })}
             </ul>

@@ -2,7 +2,6 @@ import BookItem from "./BookItem";
 import ItemContainer from "./ItemContainer";
 
 export default function BooksList({ booksList, genre }) {
-
     return (
         <>
             {booksList

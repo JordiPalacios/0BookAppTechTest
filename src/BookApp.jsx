@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./App.css";
 import {
     FilterButton,
@@ -7,16 +7,20 @@ import {
     ListaLectura,
 } from "./components/index";
 import books from "./mock/books.json";
+import { BooksContext } from "./context/BooksContext";
 
 export default function BookApp() {
     const [genre, setGenre] = useState("Todos");
     const [booksAvailable, setBooksAvailable] = useState(books.library.length);
     const [booksList, setBooksList] = useState("0");
+    const { favBook } = useContext(BooksContext);
 
     let allBooksAvailable;
 
     //useEffect para actualizar el número de libros disponibles
     useEffect(() => {
+        setBooksList(favBook.length);
+
         allBooksAvailable =
             books.library.filter(
                 (entry) => entry.book.genre === genre || genre === "Todos"
@@ -27,7 +31,7 @@ export default function BookApp() {
         }
 
         setBooksAvailable(allBooksAvailable);
-    }, [genre, booksList]);
+    }, [genre, booksList, favBook.length]);
 
     return (
         <>
