@@ -9,15 +9,15 @@ export default function ListaLectura({ entry }) {
     };
 
     return (
-        <div className="flex flex-col items-center">
-            <h3 className="text-2xl font-semibold underline mt-6 mb-2 min-w-60 text-center ">
+        <div className="flex flex-col items-center justify-start text-emerald-300/90 border border-gray-500 bg-gray-800 min-h-40">
+            <h3 className="text-2xl font-semibold underline mt-6 mb-2 min-w-60 text-center">
                 Lista de Lectura
             </h3>
             <ul>
                 {favBook.map((entry, index) => {
                     return (
                         <React.Fragment key={index}>
-                            <li className="m-2">
+                            <li className="m-2 flex flex-col items-center justify-center">
                                 <img
                                     src={entry.cover}
                                     alt={`img${entry.title}`}

@@ -62,14 +62,7 @@ export default function BookApp() {
                 <SectionContainer sectionClassName="text-white/90">
                     <BooksList booksList={books.library} genre={genre} />
                 </SectionContainer>
-
-                <SectionContainer
-                    sectionClassName={
-                        "text-emerald-300/90 border border-gray-500 bg-gray-800"
-                    }
-                >
-                    <ListaLectura />
-                </SectionContainer>
+                <ListaLectura />
             </div>
         </>
     );
